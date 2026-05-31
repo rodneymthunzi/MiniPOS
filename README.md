@@ -1,2 +1,15 @@
 # MiniPOS
-MiniPOS is a portfolio project showcasing SQL Server database design, inventory control, sales transactions, reporting, ETL processes, and business intelligence concepts.
+
+MiniPOS is a portfolio project designed to simulate a real-world Point of Sale (POS) system.
+
+The project focuses on:
+
+- SQL Server database design.
+- Inventory and stock management.
+- Sales and payment processing.
+- Reporting and analytics.
+- ETL and data synchronization.
+- Data warehousing concepts.
+- API integration (future phase).
+
+The goal of this project is to demonstrate practical database development and data engineering skills using technologies commonly found in production environments.
