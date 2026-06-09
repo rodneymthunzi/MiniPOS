@@ -44,7 +44,7 @@ CREATE TABLE [sync].[Products](
 	[ProductID] [bigint] IDENTITY(1,1) NOT NULL,
 	[StoreId] [int] NOT NULL,
 	[ProductCode] [int] NOT NULL,
-	[Cat] [char](2) NULL,
+	[Category] [char](2) NULL,
 	[ProductName] [varchar](30) NULL,
 	[StockSheet] [varchar](10) NULL,
 	[Cost] [numeric](18, 2) NULL,
