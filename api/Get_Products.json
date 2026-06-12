@@ -1,0 +1,14 @@
+{
+  "storeId": "6192",
+  "Products": [
+    {
+      "Id": "11111",
+      "ProductName": "Delivery Fee",
+      "Price": 3000,
+      "Department": "ADDON",
+      "Hidden": false
+    }
+  ],
+  "status": true,
+  "message": "Test Message"
+}
