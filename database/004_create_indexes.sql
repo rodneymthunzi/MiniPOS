@@ -12,7 +12,7 @@ Author:  Rodney Zhou
 Project: MiniPOS
 */
 
-/* For GP reports*/
+/* For reports*/
 CREATE INDEX IX_Products_TotalStock
 ON sync.Products(TotalStock)
 
