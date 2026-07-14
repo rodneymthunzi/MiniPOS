@@ -15,3 +15,19 @@ The project focuses on:
 - Accounting integration.
 
 The goal of this project is to demonstrate practical database development and data engineering skills using technologies commonly found in production environments.
+
+Web POS / Ordering App
+          |
+          v
+      POS API
+          |
+          v
+   Mini POS Database
+          |
+          +--------------------------------+
+          |                                |
+          v                                v
+ Fiscalisation Service              Accounting Service
+          |                                |
+          v                                v
+     ZIMRA FDMS/African Gov          Accounting Package
