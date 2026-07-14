@@ -11,5 +11,7 @@ The project focuses on:
 - ETL and data synchronization.
 - Data warehousing concepts.
 - API integration (future phase).
+- Fiscal integration.
+- Accounting integration.
 
 The goal of this project is to demonstrate practical database development and data engineering skills using technologies commonly found in production environments.
