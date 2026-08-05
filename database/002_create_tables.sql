@@ -2,20 +2,20 @@
 Goal:    Creating table objects to store data.
 
 		 tables: 
-			sync.ProductCategory
-			sync.Products
-			sync.Purchases
-			sync.SalesDetails
-			sync.SaleMaster
-			sync.StoreSettings
-			sync.WaiterCashup
+			Sync.ProductCategory
+			Sync.Products
+			Sync.Purchases
+			Sync.SalesDetails
+			Sync.SaleMaster
+			Sync.StoreSettings
+			Sync.WaiterCashup
 
 Author:  Rodney Zhou
 
 Project: MiniPOS
 */
 
-CREATE TABLE [sync].[ProductCategory](
+CREATE TABLE [Sync].[ProductCategory](
 	[ProdCatID] [bigint] IDENTITY(1,1) NOT NULL,
 	[StoreId] [int] NOT NULL,
 	[CategoryCode] [varchar](10) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE [sync].[ProductCategory](
 )
 GO
 
-CREATE TABLE [sync].[Products](
+CREATE TABLE [Sync].[Products](
 	[ProductID] [bigint] IDENTITY(1,1) NOT NULL,
 	[StoreId] [int] NOT NULL,
 	[ProductCode] [int] NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE [sync].[Products](
 ) ON [PRIMARY] 
 GO
 
-CREATE TABLE [sync].[Purchases](
+CREATE TABLE [Sync].[Purchases](
 	[PurchaseId] [nvarchar](255) NOT NULL,
 	[StoreId] [int] NOT NULL,
 	[SupplierId] [int] NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE [sync].[Purchases](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
-CREATE TABLE [sync].[SalesDetail](
+CREATE TABLE [Sync].[SalesDetail](
 	[StoreId] [varchar](100) NOT NULL,
 	[LineId] [varchar](100) NOT NULL,
 	[OrderId] [nvarchar](255) NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE [sync].[SalesDetail](
 ) ON [PRIMARY] 
 GO
 
-CREATE TABLE [sync].[SalesMaster](
+CREATE TABLE [Sync].[SalesMaster](
 	[OrderId] [nvarchar](255) NOT NULL,
 	[RequestId] [varchar](100) NULL,
 	[VendorId] [varchar](100) NOT NULL,
@@ -169,7 +169,7 @@ CREATE TABLE [sync].[SalesMaster](
 )) ON [PRIMARY]
 GO
 
-CREATE TABLE [sync].[StoreSettings](
+CREATE TABLE [Sync].[StoreSettings](
 	[StoreId] [int] NOT NULL,
 	[TradingDate] [date] NULL,
 	[Active] [int] NOT NULL,
@@ -178,7 +178,7 @@ CREATE TABLE [sync].[StoreSettings](
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [sync].[WaiterCashup](
+CREATE TABLE [Sync].[WaiterCashup](
 	[CashupId] [varchar](100) NULL,
 	[TradingDate] [datetime] NOT NULL,
 	[StoreId] [int] NOT NULL,
@@ -206,25 +206,25 @@ CREATE TABLE [sync].[WaiterCashup](
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [sync].[Waitrons](
+CREATE TABLE [Sync].[Waitrons](
 	[StoreId] [int] NOT NULL,
 	[WaitronId] [int] NOT NULL,
 	[WaitronName] [varchar](255) NOT NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [sync].[Purchases] ADD  DEFAULT (getdate()) FOR [DateCreated]
+ALTER TABLE [Sync].[Purchases] ADD  DEFAULT (getdate()) FOR [DateCreated]
 GO
-ALTER TABLE [sync].[Purchases] ADD  DEFAULT (getdate()) FOR [DateUpdated]
+ALTER TABLE [Sync].[Purchases] ADD  DEFAULT (getdate()) FOR [DateUpdated]
 GO
-ALTER TABLE [sync].[SalesDetail] ADD  DEFAULT ((0)) FOR [IsItemOrdered]
+ALTER TABLE [Sync].[SalesDetail] ADD  DEFAULT ((0)) FOR [IsItemOrdered]
 GO
-ALTER TABLE [sync].[SalesDetail] ADD  DEFAULT ((0)) FOR [StatusId]
+ALTER TABLE [Sync].[SalesDetail] ADD  DEFAULT ((0)) FOR [StatusId]
 GO
-ALTER TABLE [sync].[SalesDetail] ADD  DEFAULT (getdate()) FOR [OrderDate]
+ALTER TABLE [Sync].[SalesDetail] ADD  DEFAULT (getdate()) FOR [OrderDate]
 GO
-ALTER TABLE [sync].[SalesMaster] ADD  DEFAULT (getdate()) FOR [Timestamp]
+ALTER TABLE [Sync].[SalesMaster] ADD  DEFAULT (getdate()) FOR [Timestamp]
 GO
-ALTER TABLE [sync].[SalesMaster] ADD  DEFAULT ((0)) FOR [StatusId]
+ALTER TABLE [Sync].[SalesMaster] ADD  DEFAULT ((0)) FOR [StatusId]
 GO
-ALTER TABLE [sync].[WaiterCashup] ADD  DEFAULT (getdate()) FOR [TradingDate]
+ALTER TABLE [Sync].[WaiterCashup] ADD  DEFAULT (getdate()) FOR [TradingDate]
 GO
