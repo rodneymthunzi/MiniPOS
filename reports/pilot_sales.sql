@@ -6,7 +6,11 @@ DECLARE @toDate DATE = '2026-07-05'
 SELECT 
 	CAST(INVDATE as date) BusinessDate
 	,@unit Unit
-	,CASE WHEN @unit like '%Golden Valley%' THEN 'GV - ' WHEN @unit like '%flamingo%' THEN 'FM - ' WHEN @unit like '%Windmill%' THEN 'WM - ' END +RevCentre Outlet
+	,CASE 
+		WHEN @unit like '%Golden Valley%' THEN 'GV - ' 
+		WHEN @unit like '%flamingo%' THEN 'FM - ' 
+		WHEN @unit like '%Windmill%' THEN 'WM - ' 
+	END +RevCentre Outlet
 	,sd.CASID
 	,sd.PLU
 	,sd.ITEM MenuItemName
@@ -26,7 +30,7 @@ SELECT
 	,'3' Source
 FROM dbo.SALESDETAIL sd
 JOIN dbo.casname c ON c.CASID=sd.CASID
-WHERE sd.INVDATE BETWEEN @fromDate AND @toDate
+WHERE sd.INVDATE BETWEEN @fromDate AND @toDate AND sm.DTAB <> 'MODIFY'
 GROUP BY INVDATE,RevCentre,sd.CASID,sd.PLU,sd.ITEM,sd.CostCentre,sd.DTAB
 		,sd.PDEST,CASE WHEN sd.TAX<>0 THEN 1 ELSE 0 END
 ORDER BY CAST(INVDATE as date),sd.PDEST
