@@ -21,5 +21,7 @@ SELECT
 	 ,'3' Source
 FROM dbo.VendorPayment vp
 JOIN SALESDETAIL sm ON sm.INVDATE=vp.TranDate AND sm.OUTM=vp.Outm
-WHERE vp.TranDate BETWEEN @fromDate AND @toDate AND Info not like '%tip%'
+WHERE vp.TranDate BETWEEN @fromDate AND @toDate 
+	AND Info not like '%tip%'
+	AND sm.DTAB <> 'MODIFY'
 ORDER BY timestamp
