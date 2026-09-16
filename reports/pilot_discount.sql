@@ -18,7 +18,7 @@ BEGIN
 		,''3'' Source
 	FROM ' + QUOTENAME(@tableName) + N' cvh 
 	JOIN SALESDETAIL sd ON sd.INVDATE=cvh.VDATE AND sd.OUTM=cvh.OUTM
-	WHERE cvh.[VDATE] BETWEEN @fromDateParam AND @toDateParam
+	WHERE cvh.[VDATE] BETWEEN @fromDateParam AND @toDateParam AND sm.DTAB <> 'MODIFY'
 	GROUP BY FORMAT(cvh.[VDATE],''yyyy-MM-dd''),(cvh.[REASON]+''_''+cvh.[SUBREASON]),sd.RevCentre'
 
 	EXEC sp_executesql @sql
